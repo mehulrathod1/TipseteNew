@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,6 +18,9 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final RegisterController _controller = RegisterController();
+
+  final password = TextEditingController();
+  final confirmPassword = TextEditingController();
 
   bool termsandcond = false;
   RegExp pass_valid = RegExp(r"(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)");
@@ -327,7 +329,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Container(
                                 height: 30,
                                 child: TextFormField(
+                                  controller: _controller.password,
                                   maxLines: 1,
+
+                                  // ------
                                   // validator: (value) {
                                   //   if (value!.isEmpty) {
                                   //     return "Please enter password";
@@ -342,10 +347,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   //     }
                                   //   }
                                   // },
-                                  inputFormatters: [
-                                    FilteringTextInputFormatter.allow(RegExp(
-                                        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')),
-                                  ],
+                                  // ----
+
+                                  // inputFormatters: [
+                                  //   FilteringTextInputFormatter.allow(RegExp(
+                                  //       r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')),
+                                  // ],
+
                                   decoration: InputDecoration(
                                     fillColor: Colors.white,
                                     isDense: true,
@@ -380,7 +388,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Container(
                                 height: 30,
                                 child: TextField(
-                                  controller: _controller.password,
                                   maxLines: 1,
                                   decoration: InputDecoration(
                                     fillColor: Colors.white,

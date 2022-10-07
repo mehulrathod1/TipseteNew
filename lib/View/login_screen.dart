@@ -8,7 +8,6 @@ import 'package:tipster/View/signup_screen.dart';
 import 'package:tipster/constants/widgets/commonBtn.dart';
 import 'package:tipster/constants/widgets/signUpAppBar.dart';
 import 'package:tipster/utils/colors.dart';
-
 import '../Models/LoginModel.dart';
 
 class LoginScreen extends StatefulWidget {

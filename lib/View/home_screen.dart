@@ -23,6 +23,13 @@ class _HomeScreenState extends State<HomeScreen>
       TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
 
   @override
+  void initState() {
+    // setupFirebase(context);
+    // FirebaseNotificationHandling().setupFirebase(context);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: commonSignUpAppBar(),

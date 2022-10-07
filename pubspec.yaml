@@ -40,6 +40,10 @@ dependencies:
   flag: ^6.0.0
   fluttertoast: ^8.0.9
   http: any
+  shared_preferences: ^2.0.15
+  country_code_picker: ^2.0.2
+
+
 
 
 dev_dependencies:

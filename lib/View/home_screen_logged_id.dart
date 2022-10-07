@@ -236,6 +236,7 @@ class _HomeScreenLogInState extends State<HomeScreenLogIn>
                             curve: Curves.linear);
                       }
                     }
+
                     return true;
                   },
                   child: ListView.builder(

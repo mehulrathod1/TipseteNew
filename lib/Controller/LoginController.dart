@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tipster/Models/LoginModel.dart';
 import 'package:tipster/Network/ApiClient.dart';
 import 'package:tipster/Network/ApiConstant.dart';
@@ -29,6 +30,11 @@ class LoginController {
     loader.dismiss();
 
     if (response['status'] == '1') {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setInt('user_id', response['user']['id']);
+      print(prefs.getInt('user_id'));
+
+      print(response['user']['id']);
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(response['msg']),
         duration: Duration(seconds: 1),
